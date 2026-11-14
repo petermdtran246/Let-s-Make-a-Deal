@@ -1,0 +1,234 @@
+/* General Page Layout - Crimson Velvet Theater Theme */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #faf8f5;
+    color: #1c1917;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #18181b;
+    color: #fbbf24;
+    text-align: center;
+    padding: 22px 15px;
+    border-bottom: 4px solid #b91c1c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+main {
+    flex: 1;
+    max-width: 860px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+footer {
+    background-color: #18181b;
+    color: #a1a1aa;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* Status Prompt Banner */
+.game-prompt {
+    background-color: #fef3c7;
+    border: 2px solid #d97706;
+    color: #78350f;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 20px auto 30px;
+    max-width: 650px;
+}
+
+/* Stage Grid Container */
+.stage-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* Individual Stage Curtain (Closed State) */
+.stage-door {
+    background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%);
+    color: #ffffff;
+    width: 225px;
+    min-height: 265px;
+    border-radius: 14px;
+    border: 3px solid #d97706;
+    box-shadow: 0 8px 18px rgba(127, 29, 29, 0.22);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.stage-door:hover,
+.stage-door:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 24px rgba(217, 119, 6, 0.35);
+    border-color: #fde047;
+    outline: none;
+}
+
+.curtain-top {
+    background-color: rgba(24, 24, 27, 0.45);
+    color: #fbbf24;
+    font-weight: 800;
+    font-size: 1.15rem;
+    padding: 12px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.curtain-front {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lock-icon {
+    font-size: 3.8rem;
+    margin-bottom: 12px;
+}
+
+.key-label {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #fecaca;
+    font-weight: 600;
+}
+
+/* Highlighted State When Player Locks In a Curtain */
+.stage-door.is-picked {
+    border-color: #fde047;
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.85);
+    transform: scale(1.04);
+}
+
+/* Revealed State at the End of the Round */
+.stage-door.is-open {
+    background: #ffffff;
+    color: #1c1917;
+    border-color: #d6d3d1;
+    cursor: default;
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stage-door.is-open.is-picked {
+    border: 3px solid #d97706;
+    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.25);
+}
+
+.stage-door.is-open .curtain-top {
+    background-color: #7f1d1d;
+    color: #ffffff;
+}
+
+.prize-reveal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 12px;
+}
+
+.choice-tag {
+    background-color: #f59e0b;
+    color: #18181b;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.reward-emoji {
+    font-size: 3.2rem;
+    margin: 6px 0;
+}
+
+.reward-title {
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: #1c1917;
+    margin-bottom: 4px;
+}
+
+.reward-cash {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #15803d;
+}
+
+/* Final Outcome & Restart Box */
+.outcome-box {
+    background-color: #ffffff;
+    border: 2px solid #d6d3d1;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin: 35px auto 0;
+    max-width: 680px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.outcome-box h2 {
+    margin-top: 0;
+    color: #991b1b;
+}
+
+#outcome-details {
+    font-size: 1.1rem;
+    color: #292524;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.restart-btn {
+    background-color: #15803d;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(21, 128, 61, 0.25);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.restart-btn:hover {
+    background-color: #166534;
+}
+
+.restart-btn:active {
+    transform: scale(0.97);
+}

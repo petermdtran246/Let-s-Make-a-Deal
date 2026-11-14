@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Let's Make a Deal!</title>
+        
+        <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- Load jQuery library from Google CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- Link to external JavaScript file for game logic -->
+        <script src="game.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Let's Make a Deal!</h1>
+        </header>
+
+        <main>
+            <p>Three mystery prizes are hidden behind the curtains below. Pick one, hear the host's cash offer, and decide whether to take the money or risk it all!</p>
+            <p><strong>Controls:</strong> Click a curtain with your mouse or press <strong>1</strong>, <strong>2</strong>, or <strong>3</strong> on your keyboard.</p>
+
+            <!-- Status bar showing current game instructions -->
+            <div id="game-prompt" class="game-prompt">
+                Pick Curtain 1, Curtain 2, or Curtain 3 to start the round!
+            </div>
+
+            <!-- Block 1: Three Stage Curtains -->
+            <div class="stage-grid">
+                
+                <!-- Curtain 1 -->
+                <div class="stage-door" id="curtain-0" data-slot="0" tabindex="0">
+                    <div class="curtain-top">Curtain #1</div>
+                    <div class="curtain-front">
+                        <span class="lock-icon">🔒</span>
+                        <p class="key-label">Click or Press [1]</p>
+                    </div>
+                    <div class="prize-reveal" style="display: none;"></div>
+                </div>
+
+                <!-- Curtain 2 -->
+                <div class="stage-door" id="curtain-1" data-slot="1" tabindex="0">
+                    <div class="curtain-top">Curtain #2</div>
+                    <div class="curtain-front">
+                        <span class="lock-icon">🔒</span>
+                        <p class="key-label">Click or Press [2]</p>
+                    </div>
+                    <div class="prize-reveal" style="display: none;"></div>
+                </div>
+
+                <!-- Curtain 3 -->
+                <div class="stage-door" id="curtain-2" data-slot="2" tabindex="0">
+                    <div class="curtain-top">Curtain #3</div>
+                    <div class="curtain-front">
+                        <span class="lock-icon">🔒</span>
+                        <p class="key-label">Click or Press [3]</p>
+                    </div>
+                    <div class="prize-reveal" style="display: none;"></div>
+                </div>
+
+            </div>
+
+            <!-- Block 2: Final Summary & Play Again Section -->
+            <div id="outcome-box" class="outcome-box" style="display: none;">
+                <h2>Final Showdown</h2>
+                <p id="outcome-details"></p>
+                <button type="button" id="restart-btn" class="restart-btn">Play Another Round</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Peter Tran</p>
+        </footer>
+    </body>
+</html>
